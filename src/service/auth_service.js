@@ -1,7 +1,5 @@
 import firebase from 'firebase/compat/app';
-
 import 'firebase/compat/auth';
-
 import firebaseApp from './firebase';
 
 class AuthService {
