@@ -16,7 +16,7 @@ function App({authService}) {
        />
        <Route
           path='/maker'    
-          element={<Maker />}  
+          element={<Maker authService={authService} />}  
        />  
        </Routes>    
     </BrowserRouter>

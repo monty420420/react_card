@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
@@ -12,7 +12,7 @@ const Login = ({ authService }) => {
          {
            state: 
            { id:userId } 
-          },           /* (경로, {데이터}) */
+          }           /* (경로, {데이터}) */
         );
   }
 
@@ -21,6 +21,13 @@ const Login = ({ authService }) => {
       .login(event.currentTarget.textContent)
       .then(data => goToMaker(data.user.uid))
   };
+
+  useEffect(() => {
+    authService.onAuthChange(user=> {
+      user && goToMaker(user.id);
+    });
+  });
+
 
   return (
     <section className={styles.login}>
