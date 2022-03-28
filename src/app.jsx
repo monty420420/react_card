@@ -3,6 +3,7 @@ import Login from './components/login/login';
 import styles from './app.module.css';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Maker from './components/maker/maker';
+import Error from './components/error/error';
 
 
 function App({authService}) {
@@ -18,7 +19,9 @@ function App({authService}) {
           path='/maker'    
           element={<Maker authService={authService} />}  
        />  
-       </Routes>    
+       <Route path='*' element={<Error />} />  
+       </Routes>   
+        
     </BrowserRouter>
 
     </div>
