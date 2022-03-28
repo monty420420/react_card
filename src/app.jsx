@@ -1,13 +1,28 @@
 import React from 'react';
 import Login from './components/login/login';
 import styles from './app.module.css';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Maker from './components/maker/maker';
 
 
 function App({authService}) {
   return (
-   <div className={styles.app}>
-      <Login authService={authService} />
-   </div>
+    <div className={styles.app}>
+    <BrowserRouter>
+       <Routes>   
+       <Route
+           path="/"   
+           element={<Login authService={authService} />} 
+       />
+       <Route
+          path='/maker'    
+          element={<Maker />}  
+       />  
+       </Routes>    
+    </BrowserRouter>
+
+    </div>
+   
   );
 }
 
