@@ -4,10 +4,10 @@
 
 2. 사용기술:
 
--html
--css
--javascript
--react.js
+- html
+- css
+- javascript
+- react.js
 
 3. 주요특징:
 
